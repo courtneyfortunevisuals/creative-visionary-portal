@@ -2,6 +2,7 @@
 import React from 'react';
 import Navbar from '@/components/Navbar';
 import ProjectGrid from '@/components/ProjectGrid';
+import ProjectCard from '@/components/ProjectCard';
 import Contact from '@/components/Contact';
 import Footer from '@/components/Footer';
 
@@ -95,7 +96,7 @@ const Projects = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {allProjects.map((project) => (
               <div key={project.id} className="animate-scale-in" style={{ animationDelay: `${parseInt(project.id) * 0.1}s` }}>
-                <ProjectGrid.ProjectCard {...project} />
+                <ProjectCard {...project} />
               </div>
             ))}
           </div>
