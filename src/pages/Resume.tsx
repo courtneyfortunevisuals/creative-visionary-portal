@@ -3,47 +3,54 @@ import React from 'react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import Contact from '@/components/Contact';
-import { ArrowDownCircle, BriefcaseBusiness, GraduationCap, Award, Check } from 'lucide-react';
+import { ArrowDownCircle } from 'lucide-react';
 
 const Resume = () => {
   return (
     <main className="min-h-screen bg-slate-50">
       <Navbar />
       
-      <section className="pt-24 pb-16">
+      <article className="pt-24 pb-16">
         <div className="container-custom max-w-4xl">
           {/* About Me Section */}
-          <div className="mb-16">
-            <h1 className="text-4xl font-bold mb-8">About Me</h1>
-            <p className="text-gray-700 mb-4">
-              A highly innovative and meticulous Digital Designer with over six 
-              years of experience in the marketing and advertising industry. 
-              Skilled in creating unique solutions for both print and digital media, 
-              specializing in branding, layout design, and front-end web 
-              development. Proven success in driving engagement through 
-              compelling visual storytelling and smooth project execution.
-            </p>
-            <p className="text-gray-700 mb-4">
-              Acclaimed for excellent teamwork, time management, and 
-              communication skills, consistently delivering superior work that 
-              surpasses client expectations. Certified in Graphic Design and Web 
-              Development, and holder of the esteemed Meta Front-End 
-              Developer Certificate, demonstrating expertise in advanced web 
-              technologies. Dedicated to staying ahead of design trends and 
-              using skills to enhance brand presence and achieve business goals.
-            </p>
-            <a 
-              href="#" 
-              className="inline-flex items-center gap-2 text-gray-700 hover:text-blue-600 transition-colors mt-4"
-            >
-              <ArrowDownCircle className="w-5 h-5" />
-              Download Resume as PDF
-            </a>
-          </div>
+          <section className="mb-16">
+            <header>
+              <h1 className="text-4xl font-bold mb-8">About Me</h1>
+            </header>
+            <div className="prose max-w-none">
+              <p className="text-gray-700 mb-4">
+                A highly innovative and meticulous Digital Designer with over six 
+                years of experience in the marketing and advertising industry. 
+                Skilled in creating unique solutions for both print and digital media, 
+                specializing in branding, layout design, and front-end web 
+                development. Proven success in driving engagement through 
+                compelling visual storytelling and smooth project execution.
+              </p>
+              <p className="text-gray-700 mb-4">
+                Acclaimed for excellent teamwork, time management, and 
+                communication skills, consistently delivering superior work that 
+                surpasses client expectations. Certified in Graphic Design and Web 
+                Development, and holder of the esteemed Meta Front-End 
+                Developer Certificate, demonstrating expertise in advanced web 
+                technologies. Dedicated to staying ahead of design trends and 
+                using skills to enhance brand presence and achieve business goals.
+              </p>
+              <a 
+                href="#" 
+                className="inline-flex items-center gap-2 text-gray-700 hover:text-blue-600 transition-colors mt-4"
+                download
+              >
+                <ArrowDownCircle className="w-5 h-5" />
+                Download Resume as PDF
+              </a>
+            </div>
+          </section>
           
           {/* Education Section */}
-          <div className="mb-16">
-            <h2 className="text-2xl font-bold mb-6">Education</h2>
+          <section className="mb-16">
+            <header>
+              <h2 className="text-2xl font-bold mb-6">Education</h2>
+            </header>
             <ul className="space-y-5">
               <li className="flex gap-2">
                 <span className="text-gray-700">•</span>
@@ -70,11 +77,13 @@ const Resume = () => {
                 </div>
               </li>
             </ul>
-          </div>
+          </section>
           
           {/* Experience Section */}
-          <div className="mb-16">
-            <h2 className="text-2xl font-bold mb-6">Experience</h2>
+          <section className="mb-16">
+            <header>
+              <h2 className="text-2xl font-bold mb-6">Experience</h2>
+            </header>
             <ul className="space-y-8">
               <li>
                 <h3 className="font-semibold">Designer & Studio Specialist, Sprout Performance Partners, CPT, 2016 – 2024</h3>
@@ -134,11 +143,13 @@ const Resume = () => {
                 </ul>
               </li>
             </ul>
-          </div>
+          </section>
           
           {/* Skills Section */}
-          <div className="mb-16">
-            <h2 className="text-2xl font-bold mb-6">Skills</h2>
+          <section className="mb-16">
+            <header>
+              <h2 className="text-2xl font-bold mb-6">Skills</h2>
+            </header>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-2">
               <div className="flex gap-2 items-start">
                 <span className="text-gray-700">•</span>
@@ -221,11 +232,13 @@ const Resume = () => {
                 <p>Communication</p>
               </div>
             </div>
-          </div>
+          </section>
           
           {/* Personal Qualities Section */}
-          <div className="mb-16">
-            <h2 className="text-2xl font-bold mb-6">Personal Qualities</h2>
+          <section className="mb-16">
+            <header>
+              <h2 className="text-2xl font-bold mb-6">Personal Qualities</h2>
+            </header>
             <ul className="space-y-2">
               <li className="flex gap-2 items-start">
                 <span className="text-gray-700">•</span>
@@ -244,9 +257,9 @@ const Resume = () => {
                 <p>Passionate about staying current with technology and design trends.</p>
               </li>
             </ul>
-          </div>
+          </section>
         </div>
-      </section>
+      </article>
       
       <Contact />
       <Footer />
