@@ -1,12 +1,11 @@
 
 import React from 'react';
 import Navbar from '@/components/Navbar';
-import Hero from '@/components/Hero';
 import ProjectGrid from '@/components/ProjectGrid';
 import Contact from '@/components/Contact';
 import Footer from '@/components/Footer';
 
-const featuredProjects = [
+const allProjects = [
   {
     id: '1',
     title: 'Rebranding',
@@ -30,10 +29,7 @@ const featuredProjects = [
     imageUrl: '/placeholder.svg',
     color: 'bg-[#E5DEFF]',
     slug: 'brand-campaign'
-  }
-];
-
-const otherProjects = [
+  },
   {
     id: '4',
     title: 'Dynamic Prospecting & Remarketing',
@@ -49,10 +45,7 @@ const otherProjects = [
     imageUrl: '/placeholder.svg',
     color: 'bg-[#9b87f5]',
     slug: 'social-media'
-  }
-];
-
-const motionProjects = [
+  },
   {
     id: '6',
     title: 'Dr. James Anderson',
@@ -68,46 +61,46 @@ const motionProjects = [
     imageUrl: '/placeholder.svg',
     color: 'bg-[#222222]',
     slug: 'kinetic-typography'
+  },
+  {
+    id: '8',
+    title: 'E-commerce Redesign',
+    category: 'UI/UX Design',
+    imageUrl: '/placeholder.svg',
+    color: 'bg-[#7E69AB]',
+    slug: 'ecommerce-redesign'
+  },
+  {
+    id: '9',
+    title: 'Digital Marketing Campaign',
+    category: 'Social Media Design',
+    imageUrl: '/placeholder.svg',
+    color: 'bg-[#D6BCFA]',
+    slug: 'marketing-campaign'
   }
 ];
 
-const Index = () => {
+const Projects = () => {
   return (
     <main className="min-h-screen">
       <Navbar />
-      <Hero />
       
-      <div className="py-8">
-        <ProjectGrid 
-          title="Selected projects"
-          description="Explore my portfolio of projects, showcasing my dedication to innovative and impactful design."
-          projects={featuredProjects}
-        />
-        
-        <div className="py-12 bg-secondary">
-          <div className="container-custom">
-            <div className="max-w-3xl">
-              <h2 className="text-3xl font-semibold mb-4">My graduation project</h2>
-              <p className="text-lg text-muted-foreground mb-6">
-                A behind-the-scenes look at my capstone project, showcasing my evolution as a designer and creative thinker from my early creative roots.
-              </p>
-              <a href="#" className="font-medium hover-underline">Read case study</a>
-            </div>
+      <section className="pt-32 pb-16">
+        <div className="container-custom">
+          <h1 className="text-4xl md:text-5xl font-semibold mb-6">Projects</h1>
+          <p className="text-lg text-muted-foreground max-w-2xl mb-12">
+            A collection of my work across branding, UI/UX design, art direction, and motion graphics.
+          </p>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {allProjects.map((project) => (
+              <div key={project.id} className="animate-scale-in" style={{ animationDelay: `${parseInt(project.id) * 0.1}s` }}>
+                <ProjectGrid.ProjectCard {...project} />
+              </div>
+            ))}
           </div>
         </div>
-        
-        <ProjectGrid 
-          title="Selected projects"
-          description="Explore my portfolio of projects, showcasing my dedication to innovative and impactful design."
-          projects={otherProjects}
-        />
-        
-        <ProjectGrid 
-          title="Motion Design"
-          description="Moving images and stories: from concepts and storyboards to finalized motion graphics."
-          projects={motionProjects}
-        />
-      </div>
+      </section>
       
       <Contact />
       <Footer />
@@ -115,4 +108,4 @@ const Index = () => {
   );
 };
 
-export default Index;
+export default Projects;
